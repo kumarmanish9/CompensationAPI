@@ -1,15 +1,21 @@
+using AirlineCoreLibrary.Model;
+using AirlineCoreLibrary.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompensationAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PassengerController : ControllerBase
+    public class PassengerController(IPassengerService passengerService) : ControllerBase
     {
         [HttpGet(Name = "Passenger")]
-        public IEnumerable<string> Get()
+        public async Task<List<Passenger>?> Get(string flightKey)
         {
-            return new string[] { "Passenger 1", "Passenger 2" };
+            var flights = await passengerService.GetPassengers(flightKey);
+            return flights;
         }
     }
+
+
+
 }
