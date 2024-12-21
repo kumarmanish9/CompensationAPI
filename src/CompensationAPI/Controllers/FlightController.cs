@@ -1,5 +1,6 @@
 using AirlineCoreLibrary.Model;
 using AirlineCoreLibrary.Service;
+using AirlineCoreLibrary.Utility;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using System.Collections;
@@ -13,6 +14,7 @@ namespace CompensationAPI.Controllers
         [HttpGet(Name = "Flights")]
         public async Task<List<Flight>?> Get()
         {
+            AppLogger.LogInfo($"Retrieving flight.");
             var flights = await flightService.GetFlights();
             return flights;
         }
