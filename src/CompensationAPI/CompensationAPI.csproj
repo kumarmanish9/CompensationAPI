@@ -19,7 +19,7 @@
 
 	<ItemGroup>
 	  <Reference Include="AirlineCoreLibrary">
-	    <HintPath>CoreLibrary\AirlineCoreLibrary.dll</HintPath>
+	    <HintPath>..\..\..\AirlineCoreLibrary\src\AirlineCoreLibrary\bin\Debug\net8.0\AirlineCoreLibrary.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 
