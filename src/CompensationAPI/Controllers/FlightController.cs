@@ -2,8 +2,6 @@ using AirlineCoreLibrary.Model;
 using AirlineCoreLibrary.Service;
 using AirlineCoreLibrary.Utility;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using System.Collections;
 
 namespace CompensationAPI.Controllers
 {

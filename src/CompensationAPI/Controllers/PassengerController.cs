@@ -10,7 +10,7 @@ namespace CompensationAPI.Controllers
     public class PassengerController(IPassengerService passengerService) : ControllerBase
     {
         [HttpGet(Name = "Passenger")]
-        public async Task<List<Passenger>?> Get(string flightKey)
+        public async Task<List<PassengerCompenation>?> Get(string flightKey)
         {
             AppLogger.LogInfo($"Retrieving passengers for flight {flightKey}.");
             var flights = await passengerService.GetPassengers(flightKey);
