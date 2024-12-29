@@ -21,7 +21,7 @@ namespace CompensationAPI.Controllers
         [Route("Compensation")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<RuleEngineResponse> ExecuteRuleEngineRequest(RuleEngineRequest ruleEngineRequest, string requestId)
+        public ActionResult<RuleEngineResponse> ExecuteRuleEngineRequest(RuleEngineRequest ruleEngineRequest)
         {
             string RequestId = Guid.NewGuid().ToString();
             RuleEngineResponse ruleEngineResponse = new();
@@ -29,7 +29,7 @@ namespace CompensationAPI.Controllers
             Stopwatch stopWatch = Stopwatch.StartNew();
             try
             {
-                ruleEngineResponse = ruleEngineService.ExecuteRuleEngineRequest(ruleEngineRequest, requestId);
+                ruleEngineResponse = ruleEngineService.ExecuteRuleEngineRequest(ruleEngineRequest);
             }
             catch (Exception ex) when (ex.StackTrace != null || ex.Message != null)
             {
